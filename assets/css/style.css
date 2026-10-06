@@ -354,6 +354,8 @@ img { height: auto; }
 .sample figcaption { margin-top: var(--s-2); border-top: 1px dashed var(--c-border); padding-top: var(--s-1); }
 .sample figcaption strong { color: var(--ink-900); display: block; }
 .sample figcaption span { font-size: var(--fs-sm); color: var(--charcoal-500); }
+/* Price chip sits on a paper card: keep ink text + transparent bg in both themes */
+.sample figcaption .ticket-chip { color: var(--c-primary); background: transparent; }
 
 /* Testimonial as a filed receipt */
 .receipt {
@@ -390,7 +392,7 @@ img { height: auto; }
 }
 .review-tablist .nav-link img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; flex: none; border: 2px solid var(--c-border); }
 .review-tablist .nav-link span { display: flex; flex-direction: column; line-height: 1.25; }
-.review-tablist .nav-link small { font-size: var(--fs-sm); color: var(--charcoal-500); }
+.review-tablist .nav-link small { font-size: var(--fs-sm); color: var(--c-muted); }
 .review-tablist .nav-link:hover { border-color: var(--c-accent); }
 .review-tablist .nav-link.active { background: var(--c-heading); color: var(--c-bg); border-color: var(--c-heading); box-shadow: 0 4px 0 rgba(0,0,0,.12); }
 .review-tablist .nav-link.active small { color: inherit; opacity: .8; }
