@@ -1,0 +1,8 @@
+# robots.txt for InkMark & Seal Co. (TODO: replace domain)
+User-agent: *
+Allow: /
+Disallow: /pages/login.html
+Disallow: /pages/coming-soon.html
+Disallow: /documentation/
+
+Sitemap: https://www.inkmark.example/sitemap.xml

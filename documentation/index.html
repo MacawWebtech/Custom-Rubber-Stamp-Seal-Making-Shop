@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Documentation | InkMark &amp; Seal Co. HTML Template</title>
+<meta name="description" content="Installation, customisation, page structure, plugins, integrations, accessibility, credits, changelog and support for the InkMark &amp; Seal Co. HTML template.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="../assets/images/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+<script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=JSON.parse(localStorage.getItem('inkmark-theme'));if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';d.setAttribute('data-theme',t);d.setAttribute('data-bs-theme',t);}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&amp;family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&amp;family=Young+Serif&amp;display=swap">
+<link id="bootstrap-css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/dark-mode.css">
+<style>
+  .docs { display: grid; grid-template-columns: 240px 1fr; gap: 48px; }
+  .docs-nav { position: sticky; top: 24px; align-self: start; }
+  .docs-nav ol { list-style: none; padding: 0; margin: 0; display: grid; gap: 2px; }
+  .docs-nav a { display: flex; min-height: 40px; align-items: center; padding: 6px 12px; border-radius: 4px; text-decoration: none; color: var(--c-text); font-weight: 600; }
+  .docs-nav a:hover { background: var(--c-surface-2); }
+  .docs section { padding-block: 24px 40px; border-bottom: 1px dashed var(--c-border); }
+  .docs h2 { margin-top: 0; }
+  .docs h3 { font-size: 1.25rem; margin-top: 28px; }
+  pre { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 8px; padding: 16px; overflow-x: auto; font-size: .875rem; }
+  code { font-family: var(--f-mono); color: var(--c-secondary); }
+  pre code { color: var(--c-text); }
+  @media (max-width: 991.98px) { .docs { grid-template-columns: 1fr; } .docs-nav { position: static; } }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="container d-flex align-items-center justify-content-between py-3">
+  <a class="brand" href="../pages/index.html"><span class="brand-name">InkMark &amp; Seal Co.<small>Template documentation · v1.1.0</small></span></a>
+  <button type="button" class="btn btn-ghost btn-icon" data-theme-toggle aria-pressed="false" aria-label="Switch to dark theme"><i class="bi bi-moon-stars" aria-hidden="true"></i></button>
+</div></header>
+
+<main id="main" tabindex="-1" class="container py-5">
+<h1 class="mb-2">Template documentation</h1>
+<p class="lead mb-5">Everything you need to install, rebrand and launch the InkMark &amp; Seal Co. template.</p>
+
+<div class="docs">
+<nav class="docs-nav" aria-label="Documentation sections"><ol>
+  <li><a href="#install">1. Installation</a></li>
+  <li><a href="#structure">2. File &amp; page structure</a></li>
+  <li><a href="#colours">3. Colours &amp; dark mode</a></li>
+  <li><a href="#fonts">4. Fonts &amp; type</a></li>
+  <li><a href="#content">5. Content &amp; images</a></li>
+  <li><a href="#components">6. Components</a></li>
+  <li><a href="#plugins">7. JavaScript plugins</a></li>
+  <li><a href="#integrations">8. Forms &amp; integrations</a></li>
+  <li><a href="#rtl">9. RTL</a></li>
+  <li><a href="#a11y">10. Accessibility &amp; performance</a></li>
+  <li><a href="#seo">11. SEO</a></li>
+  <li><a href="#credits">12. Credits</a></li>
+  <li><a href="#changelog">13. Changelog</a></li>
+  <li><a href="#support">14. Support</a></li>
+</ol></nav>
+
+<div>
+<section id="install">
+  <h2>1. Installation</h2>
+  <p>The template is static HTML. There is no build step and no package to install.</p>
+  <ol>
+    <li>Unzip the package and open <code>pages/index.html</code> in a browser.</li>
+    <li>For a realistic test (fonts, localStorage, file uploads), serve the folder locally: <code>python3 -m http.server</code> or <code>npx serve .</code>, then visit <code>http://localhost:8000/pages/</code>.</li>
+    <li>Upload the whole folder to any static host (Netlify, Vercel, GitHub Pages, Cloudflare Pages, cPanel). The root <code>index.html</code> redirects to <code>pages/index.html</code>; if your host allows it, set <code>pages/</code> as the site root instead and adjust asset paths.</li>
+    <li>Search the project for <code>TODO</code>. Every customisation point is marked: domain, form endpoints, map, booking calendar, payments, product data.</li>
+    <li>Replace <code>https://www.inkmark.example</code> with your domain in all pages, <code>sitemap.xml</code> and <code>robots.txt</code>.</li>
+  </ol>
+  <div class="alert alert-ink">Bootstrap is loaded from jsDelivr with Subresource Integrity hashes for v5.3.3. If you change the version, update or remove the <code>integrity</code> attributes, otherwise the browser will block the file.</div>
+</section>
+
+<section id="structure">
+  <h2>2. File &amp; page structure</h2>
+<pre><code>inkmark-template/
+├── index.html              redirect to pages/index.html
+├── sitemap.xml, robots.txt
+├── assets/
+│   ├── css/style.css       tokens + all components (22 commented sections)
+│   ├── css/dark-mode.css   dark palette (semantic token overrides)
+│   ├── css/rtl.css         right-to-left fixes
+│   ├── js/main.js          shared behaviour for public pages
+│   ├── js/plugins/         stamp-preview.js, upload.js, catalog.js
+│   ├── images/             WebP art (products, hero, samples, about, blog, team, avatars, misc, logo); PNG favicon, touch icon, og-card
+│   └── fonts/              empty, for self-hosted fonts
+├── pages/                  18 HTML pages
+└── documentation/</code></pre>
+  <h3>Pages</h3>
+  <div class="table-wrap"><table class="table table-stack">
+    <thead><tr><th scope="col">File</th><th scope="col">Purpose</th><th scope="col">Extra scripts</th></tr></thead>
+    <tbody>
+      <tr><td data-label="File">index.html</td><td data-label="Purpose">Home 1: hero, trust strip, categories, live stamp preview, steps, gallery, bulk banner, reviews, FAQ, CTA, newsletter</td><td data-label="Scripts">stamp-preview.js</td></tr>
+      <tr><td data-label="File">home-2.html</td><td data-label="Purpose">Home 2: business &amp; legal stationery, darker official style (<code>body.theme-official</code>), seal spotlight</td><td data-label="Scripts">stamp-preview.js</td></tr>
+      <tr><td data-label="File">about.html</td><td data-label="Purpose">Story, mission, timeline, workshop photos, team, testimonials</td><td data-label="Scripts">–</td></tr>
+      <tr><td data-label="File">products.html</td><td data-label="Purpose">Filterable, searchable, sortable catalogue with skeletons</td><td data-label="Scripts">catalog.js</td></tr>
+      <tr><td data-label="File">product-details.html</td><td data-label="Purpose">Gallery, size/ink options, quantity pricing, add to quote. Reads <code>?id=</code> from catalog.js</td><td data-label="Scripts">catalog.js</td></tr>
+      <tr><td data-label="File">services.html / service-details.html</td><td data-label="Purpose">Service overview; details with inclusions, pricing table, FAQ, booking placeholder</td><td data-label="Scripts">–</td></tr>
+      <tr><td data-label="File">design-upload.html</td><td data-label="Purpose">Drag-and-drop artwork upload, options, notes, contact</td><td data-label="Scripts">upload.js</td></tr>
+      <tr><td data-label="File">bulk-orders.html / pricing.html</td><td data-label="Purpose">Tier table and bulk enquiry form; plans, extras and shipping</td><td data-label="Scripts">–</td></tr>
+      <tr><td data-label="File">blog.html / blog-details.html</td><td data-label="Purpose">Searchable, filterable list; article with sidebar</td><td data-label="Scripts">–</td></tr>
+      <tr><td data-label="File">contact.html</td><td data-label="Purpose">Quotation form (pre-filled from the quote list), contact info, map placeholder</td><td data-label="Scripts">–</td></tr>
+      <tr><td data-label="File">login.html</td><td data-label="Purpose">Log in / register tabs, password reset modal</td><td data-label="Scripts">–</td></tr>
+      <tr><td data-label="File">404.html, coming-soon.html</td><td data-label="Purpose">Utility pages (noindex). Configure your host to serve 404.html for missing URLs.</td><td data-label="Scripts">–</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Shared header and footer</h3>
+  <p>Header, footer, quote drawer, toast and live region are identical on every page and marked with <code>&lt;!-- ============ HEADER (shared) ============ --&gt;</code> comments. If you edit them, apply the same change to every page (a find-and-replace across <code>pages/*.html</code> works well), or move them into includes if your host supports them.</p>
+  <p>The current page is marked with <code>aria-current="page"</code> on its nav link; keep that attribute when editing.</p>
+</section>
+
+<section id="colours">
+  <h2>3. Colours &amp; dark mode</h2>
+  <p>Brand colours live at the top of <code>style.css</code>. Change them once and every component follows:</p>
+<pre><code>:root {
+  --ink-800:   #1B2A4A;  /* primary: deep ink navy */
+  --red-700:   #A8231D;  /* secondary: stamp red */
+  --brass-700: #8C6A2A;  /* accent: brass (text-safe on paper) */
+  --paper-100: #F3EEE2;  /* page background */
+  --charcoal-700: #26262B;
+}</code></pre>
+  <p>Components use <em>semantic</em> tokens (<code>--c-bg</code>, <code>--c-surface</code>, <code>--c-text</code>, <code>--c-primary</code>, <code>--c-secondary</code>, <code>--c-accent</code>, <code>--c-border</code>…). <code>dark-mode.css</code> redefines only those tokens under <code>[data-theme="dark"]</code>. When you change a brand colour, check both palettes still reach 4.5:1 contrast for text (WebAIM's contrast checker is quick).</p>
+  <p>The theme follows the visitor's system preference until they use the toggle; the choice is saved as <code>inkmark-theme</code> in localStorage. An inline script in each <code>&lt;head&gt;</code> applies it before paint, so there is no flash.</p>
+  <p>Stamp proofs (preview canvas, gallery samples, upload preview) intentionally stay on light paper in dark mode: a proof is always shown on paper.</p>
+</section>
+
+<section id="fonts">
+  <h2>4. Fonts &amp; type</h2>
+  <p>Three Google Fonts: <strong>Young Serif</strong> (headings), <strong>Public Sans</strong> (body) and <strong>Courier Prime</strong> (workshop-ticket labels for codes, sizes and specs). To change them, edit the Google Fonts <code>&lt;link&gt;</code> in each page head and the variables:</p>
+<pre><code>--f-head: "Young Serif", Georgia, serif;
+--f-body: "Public Sans", system-ui, sans-serif;
+--f-mono: "Courier Prime", "Courier New", monospace;</code></pre>
+  <p>To self-host (better privacy and speed), download WOFF2 files into <code>assets/fonts/</code>, add <code>@font-face</code> rules at the top of <code>style.css</code> with <code>font-display: swap</code>, and remove the Google Fonts links. The type scale (<code>--fs-*</code>) uses a 1.25 ratio with fluid <code>clamp()</code> for H1 and H2.</p>
+</section>
+
+<section id="content">
+  <h2>5. Content &amp; images</h2>
+  <ul>
+    <li><strong>Brand name:</strong> search for <code>InkMark</code> and <code>Seal Co.</code>. The logo mark is two image files: <code>logo-mark.webp</code> (for light backgrounds) and <code>logo-mark-light.webp</code> (footer and dark mode). Replace both at 120 × 120 px; the header swaps them automatically with the theme. Replace <code>favicon-32.png</code> and <code>apple-touch-icon.png</code> (180 × 180) too.</li>
+    <li><strong>Products:</strong> edit <code>assets/js/plugins/catalog.js</code>. Each item needs <code>id, name, category, code, size, price, blurb, image, alt</code>. Categories: <code>self-inking, logo, notary, date, accessories</code>. Product links use <code>product-details.html?id=…</code>.</li>
+    <li><strong>Images:</strong> every image is a WebP file (products 800 × 800 with transparent background, hero, gallery samples, seals and avatars at 2× resolution). Replace them with real photos at the same aspect ratios (products 1:1, about 4:3, team 1:1, blog 16:10), keep <code>width</code>/<code>height</code> attributes to prevent layout shift, keep <code>loading="lazy"</code> below the fold and write a specific <code>alt</code>. Don't reuse the same image in two sections.</li>
+    <li><strong>Stamp sizes and prices in the preview:</strong> edit <code>SIZES</code> and <code>INKS</code> in <code>stamp-preview.js</code>.</li>
+    <li><strong>Contact details and hours</strong> appear in the footer, contact page and the JSON-LD block in every head.</li>
+  </ul>
+</section>
+
+<section id="components">
+  <h2>6. Components</h2>
+  <div class="table-wrap"><table class="table table-stack">
+    <thead><tr><th scope="col">Class</th><th scope="col">Use</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Class"><code>.btn-ink</code> <code>.btn-red</code> <code>.btn-outline-ink</code> <code>.btn-paper</code> <code>.btn-ghost</code></td><td data-label="Use">Buttons. Primary variants "press down" on click (translateY + shadow collapse). Minimum 44px tall.</td></tr>
+      <tr><td data-label="Class"><code>.tag-card</code></td><td data-label="Use">Paper tag card with punched eyelet and clipped corners.</td></tr>
+      <tr><td data-label="Class"><code>.pad-card</code> + <code>.pad-well</code></td><td data-label="Use">Stamp-pad card; set the ink with <code>style="--pad:#A8231D"</code>.</td></tr>
+      <tr><td data-label="Class"><code>.product-card</code>, <code>.sample</code>, <code>.receipt</code>, <code>.price-card</code></td><td data-label="Use">Product tile, impression sample, perforated testimonial receipt, pricing plan.</td></tr>
+      <tr><td data-label="Class"><code>.ticket</code>, <code>.ticket-chip</code></td><td data-label="Use">Monospaced small-caps labels for codes, sizes, specs.</td></tr>
+      <tr><td data-label="Class"><code>.postmark</code> (<code>.ink</code>, <code>.brass</code>)</td><td data-label="Use">Circular postmark badge.</td></tr>
+      <tr><td data-label="Class"><code>.perf-top</code>, <code>.perf-bottom</code>, <code>.perf-line</code>, <code>.die-cut</code></td><td data-label="Use">Perforated band edges, dotted rule, dashed die-cut frame.</td></tr>
+      <tr><td data-label="Class"><code>.reveal</code></td><td data-label="Use">"Impression" entrance (scale + opacity + slight rotation) when scrolled into view. Lighter on mobile, off with reduced motion.</td></tr>
+      <tr><td data-label="Class"><code>.skeleton</code>, <code>.skeleton-card</code></td><td data-label="Use">Loading placeholders (catalogue).</td></tr>
+      <tr><td data-label="Class"><code>.table-stack</code></td><td data-label="Use">Table that becomes stacked cards below 640px; give each <code>&lt;td&gt;</code> a <code>data-label</code>.</td></tr>
+      <tr><td data-label="Class"><code>.section</code>, <code>.section-band</code>, <code>.surface</code>, <code>.surface-2</code></td><td data-label="Use">Section spacing and backgrounds.</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Breakpoints</h3>
+  <p>Custom CSS uses the brief's breakpoints: below 640px, 640–1024px, 1024–1280px and above 1280px. Bootstrap's grid keeps its own (576/768/992/1200/1400); the main navigation collapses below 1200px. To make Bootstrap's grid match exactly, recompile Bootstrap from Sass with custom <code>$grid-breakpoints</code>.</p>
+</section>
+
+<section id="plugins">
+  <h2>7. JavaScript plugins</h2>
+  <p>All scripts are vanilla ES6+, loaded with <code>defer</code>, and only run when their markup is present.</p>
+  <h3>Live stamp preview — <code>plugins/stamp-preview.js</code></h3>
+  <p>Hook: <code>&lt;section data-stamp-builder&gt;</code> containing inputs named <code>sp-line1/2/3</code>, <code>sp-shape</code>, <code>sp-size</code>, <code>sp-ink</code>, <code>sp-font</code>, <code>sp-double</code>, <code>sp-worn</code>, plus <code>[data-stamp-output]</code>, <code>[data-stamp-size]</code>, <code>[data-stamp-price]</code> and <code>[data-stamp-summary]</code>. Multiple builders per page are supported. User text is inserted with <code>textContent</code> only. The preview is drawn live in the browser (it can't be a static image); the download button exports it as a 1200 px PNG.</p>
+  <h3>Design upload — <code>plugins/upload.js</code></h3>
+  <p>Hook: <code>[data-dropzone]</code> with <code>data-list</code> and <code>data-preview</code> selectors. Edit <code>ACCEPT</code>, <code>MAX_MB</code> (10) and <code>MAX_FILES</code> (5). Valid files are written back into the file input, so a normal <code>multipart/form-data</code> POST sends them.</p>
+  <h3>Quote list — in <code>main.js</code></h3>
+  <p>Any button with <code>data-quote-add data-name="…" data-meta="…"</code> adds an item. With <code>data-quote-form="#form"</code>, values of fields marked <code>data-quote-field</code> are collected. Items are stored as <code>inkmark-quote</code> in localStorage and pre-fill the contact form when visitors click "Send quote request".</p>
+  <h3>Form validation — in <code>main.js</code></h3>
+  <p>Add <code>data-validate</code> to any form. Native constraints (<code>required</code>, <code>type</code>, <code>minlength</code>, <code>pattern</code>) are checked and shown inline. Custom messages: <code>data-msg-required</code>, <code>data-msg-type</code>, <code>data-msg-pattern</code>, <code>data-msg-short</code>; matching fields: <code>data-match="#otherId"</code>. <code>data-demo</code> prevents real submission and shows <code>data-success</code>; remove it once the form has a real endpoint.</p>
+</section>
+
+<section id="integrations">
+  <h2>8. Forms &amp; integrations</h2>
+  <ul>
+    <li><strong>Formspree:</strong> set <code>action="https://formspree.io/f/YOUR_ID"</code> (already in place) and remove <code>data-demo</code>. File uploads need a paid Formspree plan.</li>
+    <li><strong>Netlify Forms:</strong> add <code>data-netlify="true"</code> and a <code>name</code> to the form, remove <code>action</code> and <code>data-demo</code>.</li>
+    <li><strong>Mailchimp:</strong> paste your list URL (<code>…list-manage.com/subscribe/post?u=…&amp;id=…</code>) into the newsletter form action; the email field is already named <code>EMAIL</code>.</li>
+    <li><strong>ConvertKit:</strong> <code>action="https://app.convertkit.com/forms/FORM_ID/subscriptions"</code> and rename the field to <code>email_address</code>.</li>
+    <li><strong>Google Maps:</strong> replace <code>.map-placeholder</code> on the contact page with the commented <code>&lt;iframe&gt;</code>; keep the <code>title</code> attribute.</li>
+    <li><strong>Booking calendar:</strong> embed Calendly or Cal.com inside <code>#booking-calendar</code> on <code>service-details.html</code>.</li>
+    <li><strong>Stripe / PayPal:</strong> mount Stripe Checkout or PayPal Smart Buttons in <code>#payment-buttons</code> on <code>product-details.html</code>. Payment icons are in the footer.</li>
+  </ul>
+</section>
+
+<section id="rtl">
+  <h2>9. RTL (Arabic, Hebrew)</h2>
+  <ol>
+    <li>Set <code>&lt;html lang="ar" dir="rtl"&gt;</code> (or <code>he</code>).</li>
+    <li>Swap <code>bootstrap.min.css</code> for <code>bootstrap.rtl.min.css</code> and update its integrity hash.</li>
+    <li><code>rtl.css</code> is already loaded after <code>style.css</code>. Layout uses logical properties (<code>inset-inline</code>, <code>margin-inline</code>, <code>padding-inline</code>), so most components flip automatically.</li>
+  </ol>
+  <p>The <strong>RTL</strong> button in the header (next to the theme toggle) and the "RTL preview" button in the footer both toggle direction for testing and remember it. Remove the buttons (<code>[data-dir-toggle]</code>) for production.</p>
+</section>
+
+<section id="a11y">
+  <h2>10. Accessibility &amp; performance</h2>
+  <ul>
+    <li>Skip link, one H1 per page, logical heading order, landmarks and labelled navigation.</li>
+    <li>Visible focus ring (<code>--c-focus</code>), 44px minimum touch targets, keyboard-operable menus, tabs, accordions, modals and the stamp builder.</li>
+    <li>Inline errors are linked with <code>aria-describedby</code> and <code>aria-invalid</code>; status messages and the stamp preview summary use live regions.</li>
+    <li><code>prefers-reduced-motion</code> disables the hero press, reveals and shimmer.</li>
+    <li>Performance: no framework, deferred scripts, WebP images with width/height set and lazy loading, <code>fetchpriority="high"</code> on each page's main image, preconnect to font hosts. For PageSpeed 90+ in production, self-host fonts, enable compression and long cache headers, and keep replacement photos under ~150 KB.</li>
+  </ul>
+</section>
+
+<section id="seo">
+  <h2>11. SEO</h2>
+  <p>Every page has a unique title (≤ 60 characters), meta description (150–160 characters), canonical URL and Open Graph tags. JSON-LD: <code>Store</code> (LocalBusiness) on all pages, <code>Product</code> on product details, <code>FAQPage</code> on both homes and service details, <code>BlogPosting</code> on the article. Utility and login pages are <code>noindex</code> and disallowed in <code>robots.txt</code>. Update <code>sitemap.xml</code> when you add pages.</p>
+</section>
+
+<section id="credits">
+  <h2>12. Credits</h2>
+  <ul>
+    <li>Bootstrap 5.3.3 — MIT licence</li>
+    <li>Bootstrap Icons 1.11.3 — MIT licence</li>
+    <li>Young Serif, Public Sans, Courier Prime — SIL Open Font Licence, via Google Fonts</li>
+    <li>All images (WebP/PNG): original artwork made for this template, intended as placeholders for your own photos.</li>
+  </ul>
+</section>
+
+<section id="changelog">
+  <h2>13. Changelog</h2>
+  <p><span class="ticket-chip">v1.1.0 · 2026-10-05</span> All illustrations, logo and favicon delivered as WebP/PNG image files; live preview downloads as PNG.</p>
+  <p><span class="ticket-chip">v1.0.0 · 2026-10-05</span> Initial release: 18 pages, live stamp preview, design upload, quote list, catalogue, dark mode, RTL.</p>
+</section>
+
+<section id="support">
+  <h2>14. Support</h2>
+  <p>Before asking for help, check the browser console and confirm the <code>TODO</code> items for your feature are set. When you contact support, include the page, browser and steps to reproduce. <!-- TODO: add your support email / marketplace profile link --> Support email: <a href="mailto:support@inkmark.example">support@inkmark.example</a>.</p>
+</section>
+</div>
+</div>
+</main>
+<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script defer src="../assets/js/main.js"></script>
+</body>
+</html>
