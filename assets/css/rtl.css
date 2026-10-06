@@ -1,0 +1,22 @@
+/* ==========================================================================
+   InkMark & Seal Co. — RTL overrides (Arabic / Hebrew)
+   Most layout already uses logical properties (inset-inline, margin-inline,
+   padding-inline, border-inline). This file only fixes what cannot be
+   expressed logically. To enable RTL:
+     1. <html lang="ar" dir="rtl">
+     2. swap bootstrap.min.css for bootstrap.rtl.min.css
+     3. load this file after style.css
+   main.js does steps 1–2 automatically when the "RTL" toggle in the footer
+   is used (demo only; set it in markup for production).
+   ========================================================================== */
+[dir="rtl"] body { font-family: "Noto Sans Arabic", var(--f-body); }
+[dir="rtl"] .tag-card::before { left: auto; right: 50%; margin-left: 0; margin-right: -7px; }
+[dir="rtl"] .tag-card:hover { transform: translateY(-3px) rotate(.4deg); }
+[dir="rtl"] .postmark { transform: rotate(9deg); }
+[dir="rtl"] .bi-arrow-right::before, [dir="rtl"] .bi-chevron-right::before, [dir="rtl"] .bi-arrow-right-short::before { transform: scaleX(-1); display: inline-block; }
+[dir="rtl"] .breadcrumb-item + .breadcrumb-item::before { float: right; padding-left: var(--bs-breadcrumb-item-padding-x); padding-right: 0; }
+[dir="rtl"] .press-stage .press-paper { transform: rotate(3deg); }
+[dir="rtl"] .ticket, [dir="rtl"] .ticket-chip { letter-spacing: 0; }
+[dir="rtl"] .stamp-preview svg { direction: ltr; } /* SVG text paths stay LTR; Arabic text still shapes correctly */
+[dir="rtl"] .accordion-button::after { margin-left: 0; margin-right: auto; }
+[dir="rtl"] .form-select { background-position: left .75rem center; padding-left: 2.25rem; padding-right: .75rem; }

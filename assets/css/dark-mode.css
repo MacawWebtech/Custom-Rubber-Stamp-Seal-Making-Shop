@@ -1,0 +1,68 @@
+/* ==========================================================================
+   InkMark & Seal Co. — Dark palette
+   Activated by <html data-theme="dark"> (set by main.js from localStorage
+   or the system preference). Only semantic tokens change; components
+   inherit automatically. Impression/paper samples stay on light paper on
+   purpose: a stamp proof is always shown on paper.
+   ========================================================================== */
+[data-theme="dark"] {
+  color-scheme: dark;
+  --c-bg: #11151E;
+  --c-surface: #182030;
+  --c-surface-2: #212B3F;
+  --c-text: #E4DED0;
+  --c-heading: #F6F1E4;
+  --c-muted: #ACA594;
+  --c-border: #344058;
+  --c-primary: #C9D5F2;          /* ink becomes a pale ink-blue for contrast */
+  --c-primary-strong: #93A6D6;
+  --c-on-primary: #111C33;
+  --c-secondary: #E8746A;        /* stamp red, lifted for 4.5:1 on dark */
+  --c-secondary-strong: #B9473D;
+  --c-on-secondary: #1A0A08;
+  --c-accent: #D9B56A;
+  --c-accent-soft: #3A3120;
+  --c-link: #A9BDF0;
+  --c-focus: #7FB0FF;
+  --c-success: #79C48E;
+  --c-danger: #F08A80;
+  --c-band: #0B0F18;
+  --c-on-band: #EDE7D9;
+  --sh-press: 0 4px 0 #6C7FAF;
+  --sh-pressed: 0 1px 0 #6C7FAF;
+  --sh-press-red: 0 4px 0 #8E2F27;
+  --sh-tag: 3px 3px 0 #0A0D14;
+  --sh-lift: 0 12px 26px -14px rgba(0,0,0,.8);
+  --accordion-icon-filter: invert(1) brightness(1.4);
+}
+[data-theme="dark"] body {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .035 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+[data-theme="dark"] .btn-ink:hover, [data-theme="dark"] .btn-ink:focus-visible { background: #E2E9FA; color: #111C33; }
+[data-theme="dark"] .btn-red { color: #1A0A08; }
+[data-theme="dark"] .btn-red:hover { background: #F0948B; color: #1A0A08; }
+[data-theme="dark"] .tag-card:hover { box-shadow: 5px 6px 0 #0A0D14; }
+[data-theme="dark"] .pad-card { border-color: #475572; box-shadow: 0 5px 0 #475572; }
+[data-theme="dark"] .trust-strip { background: #1B2A4A; color: #EDE7D9; }
+[data-theme="dark"] .alert-ink { background: #1E2A44; color: #DCE2EE; }
+[data-theme="dark"] .alert-success { background: #17301F; color: #CDEBD5; }
+[data-theme="dark"] .alert-danger { background: #3A1714; color: #F6D3CF; }
+[data-theme="dark"] .alert-warning { background: #3A3120; color: #F0E1BE; }
+[data-theme="dark"] .badge-brass { color: #F0E1BE; }
+[data-theme="dark"] .status-making { color: #C3A6EE; }
+[data-theme="dark"] .site-footer { background: #0B0F18; }
+[data-theme="dark"] .postmark.ink { --pm: #C9D5F2; }
+[data-theme="dark"] .upload-preview-paper img { mix-blend-mode: normal; }
+[data-theme="dark"] .dropzone.is-dragover { background: #1E2A44; }
+[data-theme="dark"] .gallery-thumbs button, [data-theme="dark"] .gallery-main, [data-theme="dark"] .product-card .product-media { background: #E9E2D0; }
+/* Paper surfaces stay light in dark mode, so restore light tokens inside them */
+[data-theme="dark"] .stamp-builder .canvas-wrap,
+[data-theme="dark"] .sample,
+[data-theme="dark"] .official-doc,
+[data-theme="dark"] .upload-preview-paper {
+  --c-primary: #1B2A4A; --c-primary-strong: #111C33; --c-on-primary: #FBF8F1;
+  --c-link: #34497A; --c-muted: #55534E; --c-text: #26262B; --c-heading: #111C33;
+  --c-focus: #2F6FEB; --sh-press: 0 4px 0 #111C33; --sh-pressed: 0 1px 0 #111C33;
+  color: #26262B;
+}
+[data-theme="dark"] .stamp-builder .canvas-wrap .btn-ink:hover { background: #e8e0cd; color: #000; }
